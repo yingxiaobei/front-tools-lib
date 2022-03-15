@@ -1,0 +1,27 @@
+{
+  "name": "front-tools-lib",
+  "version": "1.0.0",
+  "description": "A JavaScript library for developer",
+  "main": "src/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yingxiaobei/front-tools-lib.git"
+  },
+  "keywords": [
+    "tools",
+    "utils",
+    "log",
+    "file",
+    "animation",
+    "regular"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yingxiaobei/front-tools-lib/issues"
+  },
+  "homepage": "https://github.com/yingxiaobei/front-tools-lib#readme"
+}
