@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <img src="./icon.svg" alt=""> -->
+  <!-- <script src="./logger.js" type="module"></script> -->
+  <script type="module">
+    import { Logger } from './logger.js'
+
+    function A() { B() }
+    function B() { C() }
+    function C() {
+      const logger = new Logger('Testing')
+      logger.debug('Debug 这是调试日志', {a: 100, b: 123})
+      logger.warn('Warn 这是警告日志')
+      logger.info('Info 这是普通日志')
+      logger.error('Error 这是错误日志')
+    }
+
+    A()
+  </script>
+</body>
+</html>
