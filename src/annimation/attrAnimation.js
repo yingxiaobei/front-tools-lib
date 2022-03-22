@@ -4,14 +4,14 @@
  * @param {function} cb 回调函数，链式调用
  * @param {Number} speed 加速度
  */
-function attrAnimation (obj, json, cb, speed=20) {
+function attrAnimation (obj, json, cb, speed = 20) {
   var speedDeta = 0 //动画的加速度
   clearInterval(obj.timer)
   obj.timer = setInterval(() => {
     //获取元素属性
     var curStyle = 0
     var flag = false //判断所有属性是否都到达终点值
-    for(var attr in json){
+    for (var attr in json) {
       if (attr === 'opacity') {
         curStyle = Math.round(parseFloat(getStyle(obj, attr)) * 100)
       } else {
@@ -20,9 +20,9 @@ function attrAnimation (obj, json, cb, speed=20) {
       //速度控制
       speedDeta = (json[attr] - curStyle) / speed
       speedDeta = json[attr] > curStyle ? Math.ceil(speedDeta) : Math.floor(speedDeta)
-      
+
       //临界值控制
-      if (json[attr] !== curStyle){
+      if (json[attr] !== curStyle) {
         flag = false
       }
 
@@ -58,3 +58,5 @@ function getStyle (obj, attr) {
   //Firefox
   return window.getComputedStyle(obj, null)[attr];
 }
+
+export default attrAnimation
