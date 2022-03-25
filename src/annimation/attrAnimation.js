@@ -59,4 +59,5 @@ function getStyle (obj, attr) {
   return window.getComputedStyle(obj, null)[attr];
 }
 
-export default attrAnimation
+// export default attrAnimation
+module.exports = { attrAnimation }
