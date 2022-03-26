@@ -1,12 +1,18 @@
 const path = require('path')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
-  mode:'development',
   entry: './src/index.js',
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, '../dist')
+    filename: 'front-tool-lib.min.js',
+    path: path.resolve(__dirname, '../dist'),
+    library: 'front-tool-lib',
+    libraryTarget: "umd"
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '../src')
+    }
   },
   module: {
     rules: [
