@@ -1,46 +1,61 @@
 {
-  "name": "front-tools-lib",
-  "version": "1.0.0",
-  "description": "A JavaScript library for developer",
-  "main": "src/index",
-  "scripts": {
-    "test": "jest",
-    "build": "webpack --config ./config/webpack.config.js "
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yingxiaobei/front-tools-lib.git"
-  },
-  "keywords": [
-    "tools",
-    "utils",
-    "log",
-    "file",
-    "animation",
-    "regular"
-  ],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yingxiaobei/front-tools-lib/issues"
-  },
-  "homepage": "https://github.com/yingxiaobei/front-tools-lib#readme",
-  "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@babel/preset-env": "^7.16.11",
-    "babel-loader": "^8.2.4",
-    "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^6.7.1",
-    "jest": "^27.5.1",
-    "postcss": "^8.4.12",
-    "postcss-cli": "^9.1.0",
-    "postcss-loader": "^6.2.1",
-    "postcss-preset-env": "^7.4.3",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
-  },
-  "dependencies": {
-    "core-js": "^3.21.1"
-  }
+    "name": "front-tools-lib",
+    "version": "1.0.0",
+    "description": "A JavaScript library for developer",
+    "main": "src/index",
+    "scripts": {
+        "test": "jest",
+        "build": "webpack --config ./config/webpack.config.js ",
+        "prepare": "husky install",
+        "eslint": "eslint ./src/**/*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yingxiaobei/front-tools-lib.git"
+    },
+    "keywords": [
+        "tools",
+        "utils",
+        "log",
+        "file",
+        "animation",
+        "regular"
+    ],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/yingxiaobei/front-tools-lib/issues"
+    },
+    "homepage": "https://github.com/yingxiaobei/front-tools-lib#readme",
+    "devDependencies": {
+        "@babel/core": "^7.17.8",
+        "@babel/preset-env": "^7.16.11",
+        "@commitlint/cli": "^16.2.3",
+        "@commitlint/config-conventional": "^16.2.1",
+        "babel-loader": "^8.2.4",
+        "clean-webpack-plugin": "^4.0.0",
+        "commitizen": "^4.2.4",
+        "css-loader": "^6.7.1",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-promise": "^5.2.0",
+        "husky": "^7.0.0",
+        "jest": "^27.5.1",
+        "lint-staged": "^12.3.7",
+        "postcss": "^8.4.12",
+        "postcss-cli": "^9.1.0",
+        "postcss-loader": "^6.2.1",
+        "postcss-preset-env": "^7.4.3",
+        "prettier": "^2.6.1",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.70.0",
+        "webpack-cli": "^4.9.2"
+    },
+    "dependencies": {
+        "core-js": "^3.21.1"
+    },
+    "private": true
 }

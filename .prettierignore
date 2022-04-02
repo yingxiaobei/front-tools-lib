@@ -1,0 +1,7 @@
+/node_modules
+.css
+/src/js
+/src/css
+/index.html
+/dist
+/coverage
