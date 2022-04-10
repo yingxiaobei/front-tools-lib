@@ -38,7 +38,7 @@ let styleObject = null
 /**
  * 打印实际对象，每次调用其属性会初始化styleObject
  */
-export const log = {
+const log = {
   out(message) {
     _out(message)
     styleObject = null
@@ -81,6 +81,5 @@ function _out( message ) {
   console.log("%c%s", styleString, message)
 }
 
-export default {
-  log
-}
+
+module.exports = log
