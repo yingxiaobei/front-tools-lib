@@ -31,16 +31,43 @@ for(let i = 8; i <= 120 ; i++) styleTable['fs'+i] = `font-size: ${i}px;`
 styleTable['underline'] = `text-decoration: underline;`
 styleTable['overline'] = `text-decoration: overline;`
 styleTable['line-through'] = `text-decoration: line-through;`
+/** 添加日期标识 */
+styleTable.date = 'DATE;'
 
 /** 本次打印的样式表集合（每次打印完赋为null） */
 let styleObject = null
+/** 本次打印是否打印时间 */
+let showDate = false
 
 /**
  * 打印实际对象，每次调用其属性会初始化styleObject
  */
 const log = {
-  out(message) {
-    _out(message)
+
+  /**
+  * @description 根据样式表打印字符串
+  * @param {string} message 打印的字符串 
+  */
+  out( message ) {
+
+    let styleString = `
+      padding-top: 4px; 
+      padding-left: 6px; 
+      padding-right: 6px; 
+      padding-bottom: 4px;
+      
+      background-color: #000;
+      border-radius: none;
+
+      color: #fff; 
+      font-size: 12px; 
+    `
+    
+    for(const style in styleObject) styleString += styleObject[style] 
+
+    const now = new Date()
+    const date = showDate ? `${now.toLocaleString()}'${now.getMilliseconds()}` : ''
+    console.log("%c%s", styleString,  date + ' ' + message)
     styleObject = null
   }
 }
@@ -49,36 +76,22 @@ const log = {
 for(let style in styleTable) {
   Object.defineProperty(log, style, {
     get() {
-      if(styleObject === null) styleObject = {}
+      if(styleObject === null) {
+        styleObject = {}
+        showDate = false
+      }
   
-      if(styleTable[style]) styleObject[style] = styleTable[style]
+      if(style === 'date') showDate = true
+      else if(styleTable[style]) styleObject[style] = styleTable[style]
+
       return this
-    }
+    },
+    set(value) {
+      throw new Error('禁止修改log属性')
+    },
+    configurable: false,
+    enumerable: false
   })
-}
-
-/**
- * @description 根据样式表打印字符串
- * @param {string} message 打印的字符串 
- */
-function _out( message ) {
-
-  let styleString = `
-    padding-top: 4px; 
-    padding-left: 6px; 
-    padding-right: 6px; 
-    padding-bottom: 4px;
-    
-    background-color: #000;
-    border-radius: none;
-
-    color: #fff; 
-    font-size: 12px; 
-  `
-
-  for(const style in styleObject) styleString += styleObject[style]
-
-  console.log("%c%s", styleString, message)
 }
 
 
